@@ -3,7 +3,10 @@ const path = require('path');
 const { Sequelize, DataTypes } = require('sequelize');
 
 // Подключение к базе данных
-const sequelize = new Sequelize('mysql://ISPr24-39_SevrukovKU:ISPr24-39_SevrukovKU@cfif31.ru:3306/ISPr24-39_SevrukovKU_Diplom', {
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT),
+    dialect: 'mysql',
     logging: false
 });
 

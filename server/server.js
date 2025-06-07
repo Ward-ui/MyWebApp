@@ -1,12 +1,12 @@
 const express = require('express');
 const path = require('path');
-const { sequelize } = require('./models/index');
+const fs = require('fs');
 const morgan = require('morgan');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
-const session = require('express-session');
-require('dotenv').config({path: path.join(__dirname, '../.env')});
 
+require('dotenv').config({path: path.resolve(__dirname, '../.env')});
+const { sequelize } = require('./models/index');
 
 
 const app = express();
@@ -20,14 +20,14 @@ app.use('/uploads', express.static(path.resolve(__dirname, '../uploads')));
 
 
 
-app.use(session({
+/* app.use(session({
   secret: process.env.JWT_SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: { secure: process.env.NODE_ENV === 'production' } // Продакшн настройка
-}));
+})); */
 
-// ======== JWT Middleware =========
+/* // ======== JWT Middleware =========
 const authenticateToken = (req, res, next) => {
     const token = req.header('Authorization')?.split(' ')[1];
 
@@ -44,7 +44,7 @@ const authenticateToken = (req, res, next) => {
         next();
     });
 };
-
+ */
 
 // ======== API Routes =========
 const authRoutes = require('./routes/auth');
