@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slidemune.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/notification.css">
+</head>
+<body>
+
+    <div id="notification-container" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+
+    <div id="overlay"></div>
+
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="Header">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Профиль</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">Продукты</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="cart.html">Корзина</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html">Профиль</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Контейнер для профиля -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-11 col-xl-10">
+            <div class="card shadow-lg profile-card p-4">
+                <h3 class="card-title mb-4 text-center">Профиль пользователя</h3>
+                <form id="editForm">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                    <label for="name" class="form-label">Имя пользователя</label>
+                    <input type="text" class="form-control" id="name" placeholder="Введите имя">
+                    </div>
+                    <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Введите email">
+                    </div>
+                    <div class="col-md-6">
+                    <label for="phone" class="form-label">Телефон</label>
+                    <input type="text" class="form-control" id="phone" placeholder="+7XXXXXXXXXX">
+                    </div>
+                    <div class="col-md-6">
+                    <label for="fullName" class="form-label">ФИО</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="Введите ФИО">
+                    </div>
+                    <div class="col-12">
+                    <label for="address" class="form-label">Адрес</label>
+                    <input type="text" class="form-control" id="address" placeholder="Введите адрес">
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary px-4 py-2">Сохранить изменения</button>
+                </div>
+                </form>
+            </div>
+            </div>
+        </div>
+        </div>
+
+
+    <div class="text-center">
+        <select id="filter-select" class="form-select">
+            <option value="">Все заказы</option>
+            <option value="ожидает оплаты">Ожидает оплаты</option>
+            <option value="выполнен">Выполнен</option>
+            <option value="отменен">Отменен</option>
+        </select>
+    </div>
+
+   
+
+<div id="Sidebar" class="position-relative">
+          <button id="menuToggle" class="btn btn-outline-primary">☰ Меню</button>
+          <nav id="sidebar" class="sidebar">
+            <ul id="menuItems" class="list-unstyled mb-0"></ul>
+          </nav>
+        </div>
+
+
+    <div class="container mt-4">
+        <div id="order-list" class="row gy-4"></div>
+    </div>
+
+
+
+<footer class="bg-#0056b3 text-white text-center py-4 mt-auto">
+    
+  <div class="container">
+    <p class="mb-1">📍 Адрес: Воронежская область, ООО "КФХ Висловское"</p>
+    <p class="mb-1">📞 Телефон: +7 (900) 123-45-67</p>
+    <p class="mb-0">✉️ Email: info@vislovskoe.ru</p>
+    <hr class="bg-light">
+    <p class="mb-0">&copy; 2025 ООО "КФХ Висловское". Все права защищены.</p>
+  </div>
+
+</footer>
+
+
+    <!-- Подключаем скрипт -->
+     <script src="js/slideB.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/notification.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/noliogn.js"></script>
+</body>
+</html>

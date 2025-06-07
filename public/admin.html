@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Административная панель</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/slidemune.css">
+  <link rel="stylesheet" href="css/notification.css">
+</head>
+<body>
+  <h1>Административная панель</h1>
+
+  <div id="notification-container" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+
+  <!-- Форма для выбора продукта и даты -->
+  <h2>Фильтрация продаж</h2>
+  <form id="salesForm">
+    <label for="productId">Выберите продукт:</label>
+    <select id="productId">
+      <option value="1">Гречка</option>
+      <option value="2">Пшеница</option>
+      <option value="3">Рожь</option>
+      <option value="4">Подсолнечник</option>
+    </select>
+
+    <label for="startDate">Дата начала:</label>
+    <input type="date" id="startDate" required>
+
+    <label for="endDate">Дата окончания:</label>
+    <input type="date" id="endDate" required>
+
+    <button type="submit">Получить продажи</button>
+  </form>
+
+  <!-- Место для отображения результатов -->
+  <div id="salesResult"></div>
+
+  <!-- Подключение JavaScript для обработки формы -->
+  <script src="js/admin.js"></script>
+  <script src="js/notification.js"></script>
+  <script src="js/noliogn.js"></script>
+</body>
+</html>

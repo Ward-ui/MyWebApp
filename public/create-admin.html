@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создать администратора</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notification.css">
+    <link rel="stylesheet" href="css/slidemune.css">
+</head>
+<body>
+
+    <div id="notification-container" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+
+    <div id="overlay"></div>
+
+    <div id="create-admin-wrapper">
+        <form id="create-admin-form">
+            <h1>Создать нового администратора</h1>
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Создать администратора</button>
+        </form>
+    </div>
+
+    <!-- Боковое меню -->
+        <div id="Sidebar" class="position-relative">
+          <button id="menuToggle" class="btn btn-outline-primary">☰ Меню</button>
+          <nav id="sidebar" class="sidebar">
+            <ul id="menuItems" class="list-unstyled mb-0"></ul>
+          </nav>
+        </div>
+
+        
+    <script src="js/slideB.js"></script>
+    <script src="js/notification.js"></script>
+    <script src="js/noliogn.js"></script>
+    <script src="js/create-admin.js"></script>
+</body>
+</html>

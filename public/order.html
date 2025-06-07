@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация о заказе</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notification.css">
+</head>
+<body>
+
+    <div id="notification-container" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+
+    <div id="overlay"></div>
+
+    <div class="order-container">
+        <h1>Информация о заказе</h1>
+        <div id="orderDetails">
+            <p><strong>Номер заказа:</strong> <span id="orderId"></span></p>
+            <p><strong>Дата заказа:</strong> <span id="orderDate"></span></p>
+            <p><strong>Статус:</strong> <span id="orderStatus"></span></p>
+            <p><strong>Общая сумма:</strong> <span id="totalAmount"></span> руб.</p>
+
+            <h2>Товары в заказе</h2>
+            <table id="orderItems">
+                <thead>
+                    <tr>
+                        <th>Продукт</th>
+                        <th>Количество</th>
+                        <th>Цена</th>
+                        <th>Сумма</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="bg-#0056b3 text-white text-center py-4 mt-auto">
+  <div class="container">
+    <p class="mb-1">📍 Адрес: Воронежская область, ООО "КФХ Висловское"</p>
+    <p class="mb-1">📞 Телефон: +7 (900) 123-45-67</p>
+    <p class="mb-0">✉️ Email: info@vislovskoe.ru</p>
+    <hr class="bg-light">
+    <p class="mb-0">&copy; 2025 ООО "КФХ Висловское". Все права защищены.</p>
+  </div>
+</footer>
+
+    <script src="app.js"></script>
+    <script src="js/noliogn.js"></script>
+    <script src="js/notification.js"></script>
+</body>
+</html>
