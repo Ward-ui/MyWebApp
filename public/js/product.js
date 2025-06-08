@@ -41,8 +41,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         <p class="card-text">${product.description}</p>
         <p class="card-text">Цена: ${product.price} ₽</p>
         <p class="card-text stock-quantity">В наличии: ${product.stockQuantity > 0 ? product.stockQuantity : "Нет в наличии"}</p>
+        <input type="number" min="1" value="1" class="form-control mb-2 quantity-input" style="max-width: 100px;">
         <button class="add-to-cart btn btn-primary" data-product-id="${product.id}" ${product.stockQuantity <= 0 ? "disabled" : ""}>
-          ${product.stockQuantity > 0 ? "Купить" : "Товар закончился"}
+          ${product.stockQuantity > 0 ? "Добавить в корзину" : "Товар закончился"}
         </button>
         ${isAdmin ? `
           <div class="mt-2 d-flex">
@@ -123,6 +124,11 @@ document.querySelectorAll(".replenish-btn").forEach(button => {
 
       if (!token) {
         showNotification("Пожалуйста, авторизуйтесь для добавления товаров в корзину!");
+        return;
+      }
+
+      if (quantity || quantity<1){
+        showNotification("Укажите корректное количество!");
         return;
       }
 
