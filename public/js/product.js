@@ -118,8 +118,10 @@ document.querySelectorAll(".replenish-btn").forEach(button => {
 
     // Обработчик добавления в корзину
     const handleAddToCart = async (event) => {
+      const card = event.target.closest(".card");
       const productId = event.target.getAttribute("data-product-id");
-      const quantity = 1;
+      const quantityInput = card.querySelector(".quantity-input");
+      const quantity = parseInt(quantityInput.value);
       const token = localStorage.getItem("token");
 
       if (!token) {
@@ -127,7 +129,7 @@ document.querySelectorAll(".replenish-btn").forEach(button => {
         return;
       }
 
-      if (quantity || quantity<1){
+      if (!quantity || quantity<1){
         showNotification("Укажите корректное количество!");
         return;
       }
@@ -146,7 +148,6 @@ document.querySelectorAll(".replenish-btn").forEach(button => {
         if (!response.ok) throw new Error(result.message);
 
         // Обновляем количество товара на странице
-        const card = event.target.closest(".card");
         const stockQuantityElement = card.querySelector(".stock-quantity");
         const currentStock = parseInt(stockQuantityElement.textContent.replace(/\D/g, "")) || 0;
         const newStock = currentStock - quantity;
